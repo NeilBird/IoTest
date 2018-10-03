@@ -1,9 +1,9 @@
-$accountKey = Read-Host -Prompt "Account key"
+$accountKey = Read-Host "Key"
 $cred = Get-Credential -UserName "mcowen" -Message "VM Admin cred"
 
 
 .\RampTest.ps1 -cred $cred `
             -totalVmCount 1 `
-            -storageKey $accountKey -resourceGroupNamePrefix 'STB-'
+            -storageKey ($accountKey + '') -resourceGroupNamePrefix 'STD-'
             #-deployArmTemplate
 
